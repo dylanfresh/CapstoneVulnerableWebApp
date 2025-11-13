@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+
+  {% if mode == "VULNERABLE" %}
+      <div class="banner vuln" role="status">
+        <div>
+          <strong>VULNERABLE MODE</strong>
+          <div class="muted">VULNERABLE mode enabled.</div>
+        </div>
+        <div class="controls">
+          <form method="POST" class="inline">
+            <input type="hidden" name="action" value="toggle">
+            <button type="submit">Switch to SECURE</button>
+          </form>
+        </div>
+      </div>
+    {% else %}
+      <div class="banner safe" role="status">
+        <div>
+          <strong>SECURE MODE</strong>
+          <div class="muted">SAFE mode enabled.</div>
+        </div>
+        <div class="controls">
+          <form method="POST" class="inline">
+            <input type="hidden" name="action" value="toggle">
+            <button type="submit">Switch to VULNERABLE</button>
+          </form>
+        </div>
+      </div>
+    {% endif %}
+
+<form method="POST" >
+    <input type="hidden" name="action" value="login" />
+    <div>
+        <label>Username: <input type="text" name="username" value="{{ username|e }}"></label>
+    </div>
+    <div>
+        <label>Password: <input type="password" name="password"></label>
+    </div>
+    <button type="submit">Login here</button>
+</form>
+
+</body>
+</html>
