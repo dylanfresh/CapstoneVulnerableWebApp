@@ -2,7 +2,6 @@
 
 import subprocess
 import sys
-import os
 
 
 # Make sure we're running in the current Python interpreter
@@ -27,4 +26,3 @@ except KeyboardInterrupt:
     print("Shutting down servers...")
     for p in processes:
         p.terminate()
-
