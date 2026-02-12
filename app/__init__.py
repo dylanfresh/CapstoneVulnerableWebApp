@@ -1,6 +1,5 @@
 from flask import Flask
-
-from config import Config
+from app.config import Config
 
 def create_app(): #config_class=Config
     '''Function to use as a factory and house all the blueprints'''
