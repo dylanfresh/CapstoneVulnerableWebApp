@@ -18,10 +18,10 @@ def create_app(): #config_class=Config
     # Initialize Flask extensions here
 
     # Register blueprints here
-    from app.main import bp as main_bp
+    from flask_app.app.main import bp as main_bp
     app.register_blueprint(main_bp)
 
-    from app.forum import f as forum
+    from flask_app.app.forum import f as forum
     app.register_blueprint(forum)
 
     # Home page route (non-blueprint is OK)
