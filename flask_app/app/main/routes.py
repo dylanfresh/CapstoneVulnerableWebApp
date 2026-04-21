@@ -5,6 +5,10 @@ from flask_app.app.main import bp
 def index():
     return render_template('index.html')
 
+@bp.route('/forum')
+def forum():
+    return render_template('forum.html')
+
 
 
 @bp.route('/login', methods=['GET', 'POST'])

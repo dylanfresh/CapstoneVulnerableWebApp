@@ -19,6 +19,21 @@
           </form>
         </div>
       </div>
+    <form method="POST" >
+        <input type="hidden" name="action" value="login" />
+        <div>
+            <label>Username: <input type="text" name="username" value="{{ username }}"></label>
+        </div>
+        <div>
+            <label>Password: <input type="password" name="password"></label>
+        </div>
+        <button type="submit">Login here</button>
+    </form>
+
+    {% if username %}
+    <h2>Hi {{ username | safe }}</h2>
+    {% endif %}
+
     {% else %}
       <div class="banner safe" role="status">
         <div>
@@ -32,18 +47,24 @@
           </form>
         </div>
       </div>
+
+    <form method="POST" >
+        <input type="hidden" name="action" value="login" />
+        <div>
+            <label>Username: <input type="text" name="username" value="{{ username|e }}"></label>
+        </div>
+        <div>
+            <label>Password: <input type="password" name="password"></label>
+        </div>
+        <button type="submit">Login here</button>
+    </form>
+
+    {% if username %}
+    <h2>Hi {{ username }}</h2>
     {% endif %}
 
-<form method="POST" >
-    <input type="hidden" name="action" value="login" />
-    <div>
-        <label>Username: <input type="text" name="username" value="{{ username|e }}"></label>
-    </div>
-    <div>
-        <label>Password: <input type="password" name="password"></label>
-    </div>
-    <button type="submit">Login here</button>
-</form>
+    {% endif %}
+
 
 </body>
 </html>
